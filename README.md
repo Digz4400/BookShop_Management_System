@@ -13,3 +13,4 @@ Simple BookShop Management System without GUI
 -Adding the book to the .txt files
 -Shopping system
 -Prepare orders for shipping
+-Customer Base

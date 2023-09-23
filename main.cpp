@@ -4,68 +4,19 @@
 #include<vector>
 #include<direct.h>
 #include<conio.h>
-
-/*
-* BOOK MANAGEMENT SYSTEM
-* 
-* Main Functions: Add Book, Delete Book, Update book, List books
-* 
-* Additional Function: Database of Books, Content of the Book in .txt file
-*/
-
-//Global variables
-int ID = 0;
-
-
-class Book
+#include "Book.h"
+class Client
 {
-public:
-	Book(std::string, std::string);
-	~Book();
-
 private:
-	int BookID;
-	std::string Name;
-	std::string Author;
-public:
-	void Display();
-	void ChangeName(std::string InputName);
-	int GetID();
-	void ChangeAuthor(std::string InputAuthor);
+	std::string ClientName;
+	std::string ClientSurename;
+	Client();
+	~Client();
 };
-Book::Book(std::string InputName,std::string InputAuthor)
-{
-	this->Author = InputAuthor;
-	this->Name = InputName;
-	ID++;
-	this->BookID = ID;
-}
-Book::~Book()
-{
 
-}
-void Book::Display()
-{
-	std::cout << "Bood ID: " << this->BookID;
-	std::cout << "\nName: " << this->Name;
-	std::cout << "\nAuthor: " << this->Author;
-	std::cout << "\n";
-
-}
-void Book::ChangeAuthor(std::string InputAuthor)
-{
-	this->Author = InputAuthor;
-}
-void Book::ChangeName(std::string InputName)
-{
-	this->Name = InputName;
-}
-int Book::GetID()
-{
-	return this->BookID;
-}
 //Global variable
 std::vector<Book*> library;
+
 void ListBooks()
 {
 	system("cls");
@@ -152,19 +103,20 @@ void UpdateBook()
 		}
 	}
 }
-void Menu()
+
+void MenuInventory()
 {
 	int choice;
-	while (1)
+	while (true)
 	{
 		system("cls");
-		std::cout << "\t\t\t\ WELCOME TO THE BOOKSHOP MANAGEMENT SYSTEM \n";
+		std::cout << "\t\t\t\ WELCOME TO THE INVENTORY \n";
 		std::cout << "\n\n\n";
 		std::cout << "1. ADD BOOK \n\n";
 		std::cout << "2. DELETE BOOK \n\n";
 		std::cout << "3. UPDATE BOOK \n\n";
 		std::cout << "4. AVAILABLE BOOKS  \n\n";
-		std::cout << "5. EXIT \n\n";
+		std::cout << "5. RETURN \n\n";
 		std::cout << "YOUR CHOICE: ";
 		std::cin >> choice;
 		switch (choice)
@@ -191,7 +143,7 @@ void Menu()
 			}
 			case 5:
 			{
-				exit(0);
+				return;
 				break;
 			}
 			default: 
@@ -204,11 +156,57 @@ void Menu()
 		_getch();
 	}
 }
+void MenuOrder()
+{
 
+}
+void MenuCustomer()
+{
+
+}
+void MainMenu()
+{
+
+	int choice;
+	while (true)
+	{
+		system("cls");
+		std::cout << "\t\t\t\ WELCOME TO THE BOOKSHOP MANAGEMENT SYSTEM \n";
+		std::cout << "\n\n\n";
+		std::cout << "1. CREATE ORDER \n\n";
+		std::cout << "2. CUSTOMER BASE \n\n";
+		std::cout << "3. INVENTORY \n\n";
+		std::cout << "4. EXIT \n\n";
+		std::cout << "YOUR CHOICE: ";
+		std::cin >> choice;
+		switch (choice)
+		{
+		case 1:
+		{
+			break;
+		}
+		case 2:
+		{
+			break;
+		}
+		case 3:
+		{
+			MenuInventory();
+			break;
+		}
+		case 4:
+		{
+			exit(0);
+		}
+		default:
+			break;
+		}
+	}
+}
 int main()
 {
+	MainMenu();
 	//_mkdir("Library");
-	Menu();
 	//_rmdir("Library");
 	return 0;
 }
