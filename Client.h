@@ -6,6 +6,8 @@ class Client
 private:
 	std::string ClientName;
 	std::string ClientSurename;
+	std::string ClientCity;
+	std::string ClientStreet;
 public:
 	Client();
 	~Client();

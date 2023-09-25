@@ -16,11 +16,7 @@ Book::~Book()
 }
 void Book::Display()
 {
-	std::cout << "Bood ID: " << this->BookID;
-	std::cout << "\nName: " << this->Name;
-	std::cout << "\nAuthor: " << this->Author;
-	std::cout << "\n";
-
+	std::cout << this->BookID << "\t" << this->Name << "\t" << this->Author<< "\n";
 }
 void Book::ChangeAuthor(std::string InputAuthor)
 {
@@ -34,3 +30,4 @@ int Book::GetID()
 {
 	return this->BookID;
 }
+

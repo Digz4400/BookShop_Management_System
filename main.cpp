@@ -5,26 +5,22 @@
 #include<direct.h>
 #include<conio.h>
 #include "Book.h"
-class Client
-{
-private:
-	std::string ClientName;
-	std::string ClientSurename;
-	Client();
-	~Client();
-};
+#include "Client.h"
 
 //Global variable
 std::vector<Book*> library;
+std::vector<Client*> DBClient;
 
+
+//BookMenu Function
 void ListBooks()
 {
 	system("cls");
 	std::cout << "HERE IS THE LIST OF BOOKS \n";
+	std::cout << "BookID\tName\tAuthor\n";
 	for (int i = 0; i < library.size(); i++)
 	{
 		library[i]->Display();
-		std::cout << "\n";
 	}
 }
 void AddBook()
@@ -33,12 +29,12 @@ void AddBook()
 	std::string BookName;
 	system("cls");
 	std::cout << "PLEASE ENTER BOOK AUTHOR: ";
-	std::cin.ignore(1,'\n');
+	std::cin.ignore(1, '\n');
 	getline(std::cin, BookAuthor);
 	std::cout << "PLEASE ENTER BOOK NAME: ";
 	getline(std::cin, BookName);
 	library.push_back(new Book(BookName, BookAuthor));
-	
+
 }
 void DeleteBook()
 {
@@ -49,7 +45,7 @@ void DeleteBook()
 	std::cin >> choice;
 	for (int i = 0; i < library.size(); i++)
 	{
-		if(library[i]->GetID() == choice)
+		if (library[i]->GetID() == choice)
 		{
 			library[i]->Display();
 			std::cout << "BOOK ERASE \n";
@@ -57,6 +53,7 @@ void DeleteBook()
 		}
 	}
 }
+
 void UpdateBook()
 {
 	int choice;
@@ -102,6 +99,39 @@ void UpdateBook()
 			}
 		}
 	}
+}
+
+
+//CustomerMenu Function
+void AddCustomer()
+{
+
+}
+void DeleteCustomer()
+{
+
+}
+void UpdateCustomer()
+{
+
+}
+void ListCustomer()
+{
+
+}
+
+//OrderMenu Function
+void CreateOrder()
+{
+
+}
+void ChangeStatus()
+{
+
+}
+void CheckOrders()
+{
+
 }
 
 void MenuInventory()
@@ -158,10 +188,97 @@ void MenuInventory()
 }
 void MenuOrder()
 {
+	int choice;
+	while (true)
+	{
+		system("cls");
+		std::cout << "\t\t\t\ WELCOME TO THE OORDER MENU \n";
+		std::cout << "\n\n\n";
+		std::cout << "1. CREATE ORDER \n\n";
+		std::cout << "2. CHANGE ORDER STATUS \n\n";
+		std::cout << "3. CHECK ORDERS \n\n";
+		std::cout << "4. RETURN \n\n";
+		std::cout << "YOUR CHOICE: ";
+		std::cin >> choice;
+		switch (choice)
+		{
+		case 1:
+		{
+			CreateOrder();
+			break;
+		}
+		case 2:
+		{
+			ChangeStatus();
+			break;
+		}
+		case 3:
+		{
+			CheckOrders();
+		}
+		case 4:
+		{
+			return;
+			break;
+		}
+		default:
+			std::cout << "INVALID CHOICE";
+			break;
+		}
 
+	}
 }
 void MenuCustomer()
 {
+	int choice;
+	while (true)
+	{
+		system("cls");
+		std::cout << "\t\t\t\ WELCOME TO THE CUSTOMER MENU \n";
+		std::cout << "\n\n\n";
+		std::cout << "1. ADD CUSTOMER \n\n";
+		std::cout << "2. DELETE CUSTOMER \n\n";
+		std::cout << "3. UPDATE CUSTOMER \n\n";
+		std::cout << "4. AVAILABLE CUSTOMER  \n\n";
+		std::cout << "5. RETURN \n\n";
+		std::cout << "YOUR CHOICE: ";
+		std::cin >> choice;
+		switch (choice)
+		{
+		case 1:
+		{
+			AddCustomer();
+			break;
+		}
+		case 2:
+		{
+			DeleteCustomer();
+			break;
+		}
+		case 3:
+		{
+			UpdateCustomer();
+			break;
+		}
+		case 4:
+		{
+			ListCustomer();
+			break;
+		}
+		case 5:
+		{
+			return;
+			break;
+		}
+		default:
+		{
+			std::cout << "INVALID CHOICE";
+			break;
+		}
+		}
+		std::cout << "PRESS ANY KEY";
+		_getch();
+	}
 
 }
 void MainMenu()
@@ -183,10 +300,12 @@ void MainMenu()
 		{
 		case 1:
 		{
+			MenuOrder();
 			break;
 		}
 		case 2:
 		{
+			MenuCustomer();
 			break;
 		}
 		case 3:
