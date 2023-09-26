@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<algorithm>
 #include "Client.h"
 #include "Global.h"
 
@@ -21,13 +22,16 @@ Client::~Client()
 void Client::CreateLogin()
 {
 	ClientID++;
-	this->LDAP = std::strcat(&this->ClientName.front(), &this->ClientSurename[0]) + std::to_string(ClientID);
-	std::cout << this->LDAP + " " + this->ClientName[0]+ " " + this->ClientName[0];
+	this->LDAP = ClientName[0];
+	this->LDAP += ClientSurename[0];
+	this->LDAP += "_";
+	this->LDAP += std::to_string(ClientID);
+	std::transform(LDAP.begin(), LDAP.end(), LDAP.begin(), ::toupper);
 }
 
 void Client::Display()
 {
-	std::cout << this->LDAP << "\t" << this->ClientName << "\t" << this->ClientSurename << this->ClientCity << "\t" << this->ClientStreet << "\n";
+	std::cout << this->LDAP << "\t" << this->ClientName << "\t" << this->ClientSurename << "\t" << this->ClientCity << "\t" << this->ClientStreet << "\n";
 }
 
 std::string Client::GetLDAP()

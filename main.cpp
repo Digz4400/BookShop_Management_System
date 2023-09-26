@@ -358,5 +358,6 @@ int main()
 	MainMenu();
 	//_mkdir("Library");
 	//_rmdir("Library");
+	//AddCustomer();
 	return 0;
 }
