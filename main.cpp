@@ -11,8 +11,7 @@
 std::vector<Book*> library;
 std::vector<Client*> DBClient;
 
-
-//BookMenu Function
+//BookMenu Functions
 void ListBooks()
 {
 	system("cls");
@@ -53,7 +52,6 @@ void DeleteBook()
 		}
 	}
 }
-
 void UpdateBook()
 {
 	int choice;
@@ -101,26 +99,58 @@ void UpdateBook()
 	}
 }
 
-
-//CustomerMenu Function
+//CustomerMenu Functions
+void ListCustomer()
+{
+	system("cls");
+	std::cout << "HERE IS THE LIST OF CUSTOMERS \n";
+	std::cout << "LDAP\tClientName\tClientSurename\tClientCity\tClientStreet\n";
+	for (int i = 0; i < DBClient.size(); i++)
+	{
+		DBClient[i]->Display();
+	}
+}
 void AddCustomer()
 {
-
+	std::string ClientSurename;
+	std::string ClientName;
+	std::string ClientCity;
+	std::string ClientStreet;
+	system("cls");
+	std::cout << "PLEASE ENTER CUSTOMER NAME: ";
+	std::cin.ignore(1, '\n');
+	getline(std::cin, ClientName);
+	std::cout << "PLEASE ENTER CUSTOMER SURENAME: ";
+	getline(std::cin, ClientSurename);
+	std::cout << "PLEASE ENTER CUSTOMER CITY: ";
+	getline(std::cin, ClientCity);
+	std::cout << "PLEASE ENTER CUSTOMER STREET: ";
+	getline(std::cin, ClientStreet);
+	DBClient.push_back(new Client(ClientName, ClientSurename, ClientCity, ClientStreet));
 }
 void DeleteCustomer()
 {
-
+	system("cls");
+	std::string choice;
+	ListCustomer();
+	std::cout << "INPUT LDAP OF A CUSTOMER YOU WANT TO DELETE: ";
+	std::cin >> choice;
+	for (int i = 0; i < DBClient.size(); i++)
+	{
+		if (DBClient[i]->GetLDAP() == choice)
+		{
+			DBClient[i]->Display();
+			std::cout << "CUSTOMER ERASE \n";
+			DBClient.erase(DBClient.begin() + i);
+		}
+	}
 }
 void UpdateCustomer()
 {
 
 }
-void ListCustomer()
-{
 
-}
-
-//OrderMenu Function
+//OrderMenu Functions
 void CreateOrder()
 {
 
@@ -134,6 +164,7 @@ void CheckOrders()
 
 }
 
+//Menu Functions
 void MenuInventory()
 {
 	int choice;
