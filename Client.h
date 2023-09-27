@@ -15,5 +15,7 @@ public:
 	void CreateLogin();
 	void Display();
 	std::string GetLDAP();
+	void ChangeCity(std::string);
+	void ChangeStreet(std::string);
 };
 #endif // !CLIENT_H

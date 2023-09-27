@@ -38,3 +38,13 @@ std::string Client::GetLDAP()
 {
 	return this->LDAP;
 }
+
+void Client::ChangeCity(std::string City)
+{
+	this->ClientCity = City;
+}
+
+void Client::ChangeStreet(std::string Street)
+{
+	this->ClientStreet = Street;
+}
