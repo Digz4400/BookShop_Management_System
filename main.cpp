@@ -147,7 +147,50 @@ void DeleteCustomer()
 }
 void UpdateCustomer()
 {
-
+	std::string choiceLDAP;
+	std::string input;
+	int choice;
+	ListCustomer();
+	std::cout << "INPUT LDAP OF A CUSTOMER YOU WANT TO UPDATE: ";
+	std::cin >> choiceLDAP;
+	for (int i = 0; i < DBClient.size(); i++)
+	{
+		if (DBClient[i]->GetLDAP() == choiceLDAP)
+		{
+			system("cls");
+			DBClient[i]->Display();
+			std::cout << "1. UPDATE CITY \n";
+			std::cout << "2. UPDATE STREEP \n";
+			std::cin >> choice;
+			switch (choice)
+			{
+			case 1:
+			{
+				std::cout << "NEW CITY: ";
+				std::cin.ignore(1, '\n');
+				std::getline(std::cin, input);
+				DBClient[i]->ChangeCity(input);
+				std::cout << "NEW DATA \n";
+				DBClient[i]->Display();
+				break;
+			}
+			case 2:
+			{
+				std::cout << "NEW NAME: ";
+				std::cin.ignore(1, '\n');
+				std::getline(std::cin, input);
+				DBClient[i]->ChangeStreet(input);
+				std::cout << "NEW DATA \n";
+				DBClient[i]->Display();
+				break;
+			}
+			default:
+			{
+				std::cout << "INVALID CHOICE";
+			}
+			}
+		}
+	}
 }
 
 //OrderMenu Functions
