@@ -6,10 +6,12 @@
 #include<conio.h>
 #include "Book.h"
 #include "Client.h"
+#include "Order.h"
 
 //Global variable
 std::vector<Book*> library;
 std::vector<Client*> DBClient;
+std::vector<Order*> Orders;
 
 //BookMenu Functions
 void ListBooks()

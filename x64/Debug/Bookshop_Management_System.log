@@ -1,6 +1,10 @@
-﻿  main.cpp
-C:\Users\Adam2\Desktop\Ucieczka\Visual Studio\Bookshop_Management_System\Bookshop_Management_System\main.cpp(217,16): warning C4129: " ": nierozpoznany znak sekwencji ucieczki
-C:\Users\Adam2\Desktop\Ucieczka\Visual Studio\Bookshop_Management_System\Bookshop_Management_System\main.cpp(269,16): warning C4129: " ": nierozpoznany znak sekwencji ucieczki
-C:\Users\Adam2\Desktop\Ucieczka\Visual Studio\Bookshop_Management_System\Bookshop_Management_System\main.cpp(311,16): warning C4129: " ": nierozpoznany znak sekwencji ucieczki
-C:\Users\Adam2\Desktop\Ucieczka\Visual Studio\Bookshop_Management_System\Bookshop_Management_System\main.cpp(365,16): warning C4129: " ": nierozpoznany znak sekwencji ucieczki
+﻿  Book.cpp
+  Client.cpp
+  main.cpp
+C:\Users\Adam2\Desktop\Ucieczka\Visual Studio\Bookshop_Management_System\Bookshop_Management_System\main.cpp(219,16): warning C4129: " ": nierozpoznany znak sekwencji ucieczki
+C:\Users\Adam2\Desktop\Ucieczka\Visual Studio\Bookshop_Management_System\Bookshop_Management_System\main.cpp(271,16): warning C4129: " ": nierozpoznany znak sekwencji ucieczki
+C:\Users\Adam2\Desktop\Ucieczka\Visual Studio\Bookshop_Management_System\Bookshop_Management_System\main.cpp(313,16): warning C4129: " ": nierozpoznany znak sekwencji ucieczki
+C:\Users\Adam2\Desktop\Ucieczka\Visual Studio\Bookshop_Management_System\Bookshop_Management_System\main.cpp(367,16): warning C4129: " ": nierozpoznany znak sekwencji ucieczki
+  Order.cpp
+  Generowanie kodu...
   Bookshop_Management_System.vcxproj -> C:\Users\Adam2\Desktop\Ucieczka\Visual Studio\Bookshop_Management_System\x64\Debug\Bookshop_Management_System.exe

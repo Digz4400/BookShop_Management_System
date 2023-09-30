@@ -3,6 +3,7 @@
 
 extern int ID;
 extern int ClientID;
+extern int OrderID;
 
 #endif // !GLOBAL_H
 

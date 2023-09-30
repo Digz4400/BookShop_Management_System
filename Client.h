@@ -10,6 +10,7 @@ private:
 	std::string ClientCity;
 	std::string ClientStreet;
 public:
+	Client() = default;
 	Client(std::string Name,std::string SureName,std::string City,std::string Street);
 	~Client();
 	void CreateLogin();

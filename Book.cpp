@@ -3,7 +3,7 @@
 #include "Global.h"
 
 int ID = 0;
-Book::Book(std::string InputName, std::string InputAuthor)
+Book::Book(std::string InputName, std::string InputAuthor) 
 {
 	this->Author = InputAuthor;
 	this->Name = InputName;
