@@ -10,13 +10,13 @@
 class Order
 {
 private:
-	std::string OdrderID;
+	std::string OrderID;
 	std::vector<Book*> OrderedBooks;
 	Client OrderedClient;
 public:
 	void AddBook(Book Book);
 	void GenerateShipment();
-	Order(Book Book, Client Client);
+	Order(Book &Book, Client Client);
 	~Order();
 };
 #endif // !ORDER_H

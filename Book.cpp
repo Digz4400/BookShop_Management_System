@@ -22,6 +22,14 @@ void Book::ChangeAuthor(std::string InputAuthor)
 {
 	this->Author = InputAuthor;
 }
+std::string Book::GetName()
+{
+	return this->Name;
+}
+std::string Book::GetAuthor()
+{
+	return this->Author;
+}
 void Book::ChangeName(std::string InputName)
 {
 	this->Name = InputName;

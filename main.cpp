@@ -216,7 +216,7 @@ void MenuInventory()
 	while (true)
 	{
 		system("cls");
-		std::cout << "\t\t\t\ WELCOME TO THE INVENTORY \n";
+		std::cout << "\t\t\t WELCOME TO THE INVENTORY \n";
 		std::cout << "\n\n\n";
 		std::cout << "1. ADD BOOK \n\n";
 		std::cout << "2. DELETE BOOK \n\n";
@@ -268,7 +268,7 @@ void MenuOrder()
 	while (true)
 	{
 		system("cls");
-		std::cout << "\t\t\t\ WELCOME TO THE OORDER MENU \n";
+		std::cout << "\t\t\t WELCOME TO THE OORDER MENU \n";
 		std::cout << "\n\n\n";
 		std::cout << "1. CREATE ORDER \n\n";
 		std::cout << "2. CHANGE ORDER STATUS \n\n";
@@ -310,7 +310,7 @@ void MenuCustomer()
 	while (true)
 	{
 		system("cls");
-		std::cout << "\t\t\t\ WELCOME TO THE CUSTOMER MENU \n";
+		std::cout << "\t\t\t WELCOME TO THE CUSTOMER MENU \n";
 		std::cout << "\n\n\n";
 		std::cout << "1. ADD CUSTOMER \n\n";
 		std::cout << "2. DELETE CUSTOMER \n\n";
@@ -364,7 +364,7 @@ void MainMenu()
 	while (true)
 	{
 		system("cls");
-		std::cout << "\t\t\t\ WELCOME TO THE BOOKSHOP MANAGEMENT SYSTEM \n";
+		std::cout << "\t\t\t WELCOME TO THE BOOKSHOP MANAGEMENT SYSTEM \n";
 		std::cout << "\n\n\n";
 		std::cout << "1. CREATE ORDER \n\n";
 		std::cout << "2. CUSTOMER BASE \n\n";
@@ -391,7 +391,7 @@ void MainMenu()
 		}
 		case 4:
 		{
-			exit(0);
+			return;
 		}
 		default:
 			break;
@@ -400,9 +400,9 @@ void MainMenu()
 }
 int main()
 {
+	_mkdir("Orders");
 	MainMenu();
-	//_mkdir("Library");
-	//_rmdir("Library");
+	_rmdir("Orders");
 	//AddCustomer();
 	return 0;
 }

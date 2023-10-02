@@ -34,6 +34,26 @@ void Client::Display()
 	std::cout << this->LDAP << "\t" << this->ClientName << "\t" << this->ClientSurename << "\t" << this->ClientCity << "\t" << this->ClientStreet << "\n";
 }
 
+std::string Client::GetClientName()
+{
+	return this->ClientName;
+}
+
+std::string Client::GetClientSurename()
+{
+	return this->ClientSurename;
+}
+
+std::string Client::GetClientCity()
+{
+	return this->ClientCity;
+}
+
+std::string Client::GetClientStreet()
+{
+	return this->ClientStreet;
+}
+
 std::string Client::GetLDAP()
 {
 	return this->LDAP;

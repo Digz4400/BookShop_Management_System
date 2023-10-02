@@ -15,6 +15,10 @@ public:
 	~Client();
 	void CreateLogin();
 	void Display();
+	std::string GetClientName();
+	std::string GetClientSurename();
+	std::string GetClientCity();
+	std::string GetClientStreet();
 	std::string GetLDAP();
 	void ChangeCity(std::string);
 	void ChangeStreet(std::string);

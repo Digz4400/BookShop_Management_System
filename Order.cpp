@@ -1,26 +1,37 @@
 #include <iostream>
+#include<fstream>
 #include "Global.h"
 #include "Order.h"
 #include "Book.h"
 #include "Client.h"
 
-extern int OrderID = 0;
+extern int OrderNumberID = 0;
 
 void Order::AddBook(Book Book)
 {
-	this->OrderedBooks.emplace_back(Book);
+	this->OrderedBooks.emplace_back(&Book);
 }
-
+Order::Order(Book& Book, Client Client)
+{
+	OrderNumberID++;
+	this->OrderedBooks.emplace_back(&Book);
+	this->OrderedClient = Client;
+	this->OrderID = "Order";
+	this->OrderID += char(OrderNumberID);
+}
 void Order::GenerateShipment()
 {
-
-}
-
-Order::Order(Book Book, Client Client)
-{
-	OrderID++;
-	this->OrderedBooks.emplace_back(Book);
-	this->OrderedClient = Client;
+	std::string filename;
+	filename = this->OrderID;
+	filename += ".txt";
+	std::ofstream outputfile(filename);
+	outputfile << "Personal infomation: /n" << this->OrderedClient.GetClientName() << "/n" << this->OrderedClient.GetClientName() << "/n" << this->OrderedClient.GetClientName() << "/n" << this->OrderedClient.GetClientName() << "/n";
+	outputfile << "Ordered Books: /n";
+	for (auto i : this->OrderedBooks)
+	{
+		outputfile << i->GetID() << "/n" << i->GetName() << "/n" << i->GetAuthor() << "/n/n";
+	}
+	outputfile.close();
 }
 
 Order::~Order()
