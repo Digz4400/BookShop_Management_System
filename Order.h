@@ -16,6 +16,7 @@ private:
 public:
 	void AddBook(Book Book);
 	void GenerateShipment();
+	void Display();
 	Order(Book &Book, Client Client);
 	~Order();
 };

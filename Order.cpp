@@ -34,6 +34,15 @@ void Order::GenerateShipment()
 	outputfile.close();
 }
 
+void Order::Display()
+{
+	std::cout << "Personal infomation: /n" << this->OrderedClient.GetClientName() << "/n" << this->OrderedClient.GetClientName() << "/n" << this->OrderedClient.GetClientName() << "/n" << this->OrderedClient.GetClientName() << "/n";
+	for (auto i : this->OrderedBooks)
+	{
+		std::cout << i->GetID() << "/n" << i->GetName() << "/n" << i->GetAuthor() << "/n/n";
+	}
+}
+
 Order::~Order()
 {
 }
