@@ -18,6 +18,7 @@ Order::Order(Book& Book, Client Client)
 	this->OrderedClient = Client;
 	this->OrderID = "Order";
 	this->OrderID += char(OrderNumberID);
+	this->Status = "NEW";
 }
 void Order::GenerateShipment()
 {
@@ -41,6 +42,14 @@ void Order::Display()
 	{
 		std::cout << i->GetID() << "/n" << i->GetName() << "/n" << i->GetAuthor() << "/n/n";
 	}
+	std::cout << "Status: " << this->Status << "/n/n";
+}
+
+void Order::ChangeStatus(std::string InputStatus)
+{
+	this->Status = InputStatus;
+	std::cout << "Order: " << this->OrderID << "/n";
+	std::cout << "New Status: " << this->Status << "/n/n";
 }
 
 Order::~Order()
